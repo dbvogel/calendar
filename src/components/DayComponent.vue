@@ -1,7 +1,7 @@
 <template>
     <div
       class="day"
-      :class="{ selected: isSelected, 'start-date': isStartDate, 'end-date': isEndDate }"
+      :class="{ selected: isSelected, 'start-date': isStartDate, 'end-date': isEndDate, 'blocked': isBlocked }"
       @click="handleClick"
     >
       <h2>{{ formattedDate }}</h2>
@@ -34,7 +34,12 @@
       isEndDate: {
         type: Boolean,
         required: true
+      },
+      isBlocked: {
+        type: Boolean,
+        required: true
       }
+
     },
     computed: {
       formattedDate() {
@@ -71,6 +76,10 @@
   
   .day.end-date {
     /* ... */
+  }
+
+  .day.blocked {
+    background-color: purple;
   }
   </style>
   
