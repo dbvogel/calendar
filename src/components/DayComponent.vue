@@ -25,19 +25,19 @@
       },
       isSelected: {
         type: Boolean,
-        required: true
+        required: false
       },
       isStartDate: {
         type: Boolean,
-        required: true
+        required: false
       },
       isEndDate: {
         type: Boolean,
-        required: true
+        required: false
       },
       isBlocked: {
         type: Boolean,
-        required: true
+        required: false
       }
 
     },
@@ -47,9 +47,6 @@
       },
       events() {
         return [
-          { id: 1, title: 'Meeting', time: '09:00' },
-          { id: 2, title: 'Mittagessen', time: '12:30' },
-          { id: 3, title: 'Präsentation', time: '15:00' }
         ]
       }
     },
@@ -63,11 +60,13 @@
   
   <style scoped>
   .day {
-    /* ... */
+    min-width:300px;
+    border: 1px solid black;
   }
   
   .day.selected {
     background-color: red;
+   
   }
   
   .day.start-date {
